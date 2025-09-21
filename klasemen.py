@@ -15,9 +15,9 @@ teamsB = ["Mancasan B", "Tlogo", "Mejing Wetan B", "Mejing Lor", "Watulangkah"]
 # Inisialisasi klasemen
 klasemenA = pd.DataFrame({
     "Tim": teamsA,
-    "Main": 0,
-    "Menang": 0,
-    "Kalah": 0,
+    "P": 0,
+    "W": 0,
+    "L": 0,
     "Skor +": 0,
     "Skor -": 0,
     "Set +": 0,
@@ -26,9 +26,9 @@ klasemenA = pd.DataFrame({
 })
 klasemenB = pd.DataFrame({
     "Tim": teamsB,
-    "Main": 0,
-    "Menang": 0,
-    "Kalah": 0,
+    "P": 0,
+    "W": 0,
+    "L": 0,
     "Skor +": 0,
     "Skor -": 0,
     "Set +": 0,
@@ -41,8 +41,8 @@ def update_klasemen_A(timA, timB, skorA, skorB, setA, setB):
     global klasemen
 
     # Update jumlah main
-    klasemenA.loc[klasemenA["Tim"] == timA, "Main"] += 1
-    klasemenA.loc[klasemenA["Tim"] == timB, "Main"] += 1
+    klasemenA.loc[klasemenA["Tim"] == timA, "P"] += 1
+    klasemenA.loc[klasemenA["Tim"] == timB, "P"] += 1
 
     # Update skor
     klasemenA.loc[klasemenA["Tim"] == timA, "Skor +"] += skorA
@@ -58,8 +58,8 @@ def update_klasemen_A(timA, timB, skorA, skorB, setA, setB):
 
     # Tentukan menang/kalah
     if setA > setB:
-        klasemenA.loc[klasemenA["Tim"] == timA, "Menang"] += 1
-        klasemenA.loc[klasemenA["Tim"] == timB, "Kalah"] += 1
+        klasemenA.loc[klasemenA["Tim"] == timA, "W"] += 1
+        klasemenA.loc[klasemenA["Tim"] == timB, "L"] += 1
         # Poin
         if setA == 3 and setB <= 1:
             klasemenA.loc[klasemenA["Tim"] == timA, "Poin"] += 3
@@ -67,8 +67,8 @@ def update_klasemen_A(timA, timB, skorA, skorB, setA, setB):
             klasemenA.loc[klasemenA["Tim"] == timA, "Poin"] += 2
             klasemenA.loc[klasemenA["Tim"] == timB, "Poin"] += 1
     else:
-        klasemenA.loc[klasemenA["Tim"] == timB, "Menang"] += 1
-        klasemenA.loc[klasemenA["Tim"] == timA, "Kalah"] += 1
+        klasemenA.loc[klasemenA["Tim"] == timB, "W"] += 1
+        klasemenA.loc[klasemenA["Tim"] == timA, "L"] += 1
         # Poin
         if setB == 3 and setA <= 1:
             klasemenA.loc[klasemenA["Tim"] == timB, "Poin"] += 3
@@ -81,8 +81,8 @@ def update_klasemen_B(timA, timB, skorA, skorB, setA, setB):
     global klasemenB
 
     # Update jumlah main
-    klasemenB.loc[klasemenB["Tim"] == timA, "Main"] += 1
-    klasemenB.loc[klasemenB["Tim"] == timB, "Main"] += 1
+    klasemenB.loc[klasemenB["Tim"] == timA, "P"] += 1
+    klasemenB.loc[klasemenB["Tim"] == timB, "P"] += 1
 
     # Update skor
     klasemenB.loc[klasemenB["Tim"] == timA, "Skor +"] += skorA
@@ -98,8 +98,8 @@ def update_klasemen_B(timA, timB, skorA, skorB, setA, setB):
 
     # Tentukan menang/kalah
     if setA > setB:
-        klasemenB.loc[klasemenB["Tim"] == timA, "Menang"] += 1
-        klasemenB.loc[klasemenB["Tim"] == timB, "Kalah"] += 1
+        klasemenB.loc[klasemenB["Tim"] == timA, "W"] += 1
+        klasemenB.loc[klasemenB["Tim"] == timB, "L"] += 1
         # Poin
         if setA == 3 and setB <= 1:
             klasemenB.loc[klasemenB["Tim"] == timA, "Poin"] += 3
@@ -107,8 +107,8 @@ def update_klasemen_B(timA, timB, skorA, skorB, setA, setB):
             klasemenB.loc[klasemenB["Tim"] == timA, "Poin"] += 2
             klasemenB.loc[klasemenB["Tim"] == timB, "Poin"] += 1
     else:
-        klasemenB.loc[klasemenB["Tim"] == timB, "Menang"] += 1
-        klasemenB.loc[klasemenB["Tim"] == timA, "Kalah"] += 1
+        klasemenB.loc[klasemenB["Tim"] == timB, "W"] += 1
+        klasemenB.loc[klasemenB["Tim"] == timA, "L"] += 1
         # Poin
         if setB == 3 and setA <= 1:
             klasemenB.loc[klasemenB["Tim"] == timB, "Poin"] += 3
@@ -186,14 +186,23 @@ update_klasemen_B("Mejing Wetan B", "Mejing Lor", 114, 103, 3, 2)     #1.1_20-09
 update_klasemen_B("Mancasan B", "Watulangkah", 102, 109, 2, 3)     #1.2_20-09-2025
 
 # ---
-# Tampilkan klasemen
-streamlit.subheader(":blue-background[**Klasemen Tim B**]")
-
-#Urutan untuk klasemen: berdasarkan Menang, Set Menang, dan Selisih Skor
+# Urutan untuk klasemen: berdasarkan Menang, Set Menang, dan Selisih Skor
+# Tampilkan klasemen A
+streamlit.subheader(":red-background[**Klasemen Grup A**]")
+streamlit.dataframe(show_klasemenA(), use_container_width=False)
+streamlit.badge("Last update: 21 September 2025 12:19:07", icon=":material/check:", color="green")
+# new line
+streamlit.divider()
+streamlit.write("\n\n")
+# Tampilkan klasemen B
+streamlit.subheader(":blue-background[**Klasemen Grup B**]")
 streamlit.dataframe(show_klasemenB(), use_container_width=False)
 streamlit.badge("Last update: 21 September 2025 12:23:38", icon=":material/check:", color="green")
 # ---
 streamlit.divider()
 streamlit.write("\n\n")
 streamlit.markdown("*Sekretariat Bola Voli Porkal Ambarketawang 2025*")
-streamlit.markdown("*Made using Python and Streamlit Framework by Danis Nurmansyah*")
+
+# Copyright
+url = "https://www.linkedin.com/in/dnnurman/"
+streamlit.markdown("*Made using Python and Streamlit Framework by [Danis Nurmansyah](%s)" % url*")
