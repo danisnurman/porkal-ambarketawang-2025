@@ -204,7 +204,7 @@ streamlit.badge("Last update: 21 September 2025 12:23:38", icon=":material/check
 # ---
 streamlit.divider()
 streamlit.write("\n\n")
-streamlit.markdown("*Sekretariat Bola Voli Porkal Ambarketawang 2025*")
+streamlit.markdown("*Panitia Porkal Cabang Olahraga Voli Kalurahan Ambarketawang 2025*")
 
 # Copyright
 url_linkedin = "https://www.linkedin.com/in/dnnurman/"
