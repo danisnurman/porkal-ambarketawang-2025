@@ -190,7 +190,7 @@ update_klasemen_B("Mancasan B", "Watulangkah", 102, 109, 2, 3)     #1.2_20-09-20
 streamlit.subheader(":blue-background[**Klasemen Tim B**]")
 
 #Urutan untuk klasemen: berdasarkan Menang, Set Menang, dan Selisih Skor
-streamlit.dataframe(show_klasemenB(), use_container_width=True)
+streamlit.dataframe(show_klasemenB(), use_container_width=False)
 streamlit.badge("Last update: 21 September 2025 12:23:38", icon=":material/check:", color="green")
 # ---
 streamlit.divider()
