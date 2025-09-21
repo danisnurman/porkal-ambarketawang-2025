@@ -1,7 +1,7 @@
 import streamlit
 import pandas as pd
 # ---
-streamlit.title("Porkal Voli Ambarketawang 2025")
+streamlit.title("Porkal Ambarketawang 2025")
 streamlit.write("Klasemen Porkal Cabang Olahraga Voli Kalurahan Ambarketawang Tahun 2025")
 # ---
 url_rekap = "https://s.id/iF2N1"
