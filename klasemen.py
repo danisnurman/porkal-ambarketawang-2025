@@ -4,8 +4,8 @@ import pandas as pd
 streamlit.title("Porkal Ambarketawang 2025")
 streamlit.write("Klasemen Porkal Cabang Olahraga Voli Kalurahan Ambarketawang Tahun 2025")
 # ---
-url_rekap = "https://s.id/iF2N1"
-#streamlit.markdown("**Link Rekap Skor**: [s.id/iF2N1](%s)" % url_rekap)
+url_rekap = "https://s.id/m4s27"
+streamlit.markdown("**Link Rekap Skor**: [s.id/m4s27](%s)" % url_rekap)
 streamlit.divider()
 streamlit.write("\n\n")
 # ---
@@ -184,14 +184,16 @@ def show_klasemenB():
 # ---
 # Input hasil pertandingan (contoh data sesuai tabel Anda)
 update_klasemen_B("Mejing Wetan B", "Mejing Lor", 114, 103, 3, 2)     #1.1_20-09-2025
-update_klasemen_B("Mancasan B", "Watulangkah", 102, 109, 2, 3)     #1.2_20-09-2025
+update_klasemen_B("Mancasan B", "Watulangkah", 102, 109, 2, 3)        #1.2_20-09-2025
+update_klasemen_A("Mejing Wetan A", "Kalimanjung", 75, 57, 3, 0)      #2.1_21-09-2025
+update_klasemen_A("Mejing Kidul", "Gamping Kidul", 78, 66, 3, 0)      #2.1_21-09-2025
 
 # ---
 # Urutan untuk klasemen: berdasarkan Menang, Set Menang, dan Selisih Skor
 # Tampilkan klasemen A
 streamlit.subheader(":red-background[**Klasemen Grup A**]")
 streamlit.dataframe(show_klasemenA(), use_container_width=False)
-streamlit.badge("Last update: 21 September 2025 12:19:07", icon=":material/check:", color="green")
+streamlit.badge("Last update: 22 September 2025 01:11:26", icon=":material/check:", color="green")
 # new line
 streamlit.divider()
 streamlit.write("\n\n")
