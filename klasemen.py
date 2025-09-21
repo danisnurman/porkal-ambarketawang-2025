@@ -2,9 +2,10 @@ import streamlit
 import pandas as pd
 # ---
 streamlit.title("Porkal Voli Ambarketawang 2025")
+streamlit.write("Klasemen Porkal Cabang Olahraga Voli Kalurahan Ambarketawang Tahun 2025")
 # ---
-url = "https://s.id/iF2N1"
-#streamlit.markdown("**Link Rekap Skor**: [s.id/iF2N1](%s)" % url)
+url_rekap = "https://s.id/iF2N1"
+#streamlit.markdown("**Link Rekap Skor**: [s.id/iF2N1](%s)" % url_rekap)
 streamlit.divider()
 streamlit.write("\n\n")
 # ---
@@ -204,5 +205,5 @@ streamlit.write("\n\n")
 streamlit.markdown("*Sekretariat Bola Voli Porkal Ambarketawang 2025*")
 
 # Copyright
-url = "https://www.linkedin.com/in/dnnurman/"
-streamlit.markdown("*Made using Python and Streamlit Framework by [Danis Nurmansyah](%s)*" % url)
+url_linkedin = "https://www.linkedin.com/in/dnnurman/"
+streamlit.markdown("*Made using Python and Streamlit Framework by [Danis Nurmansyah](%s)*" % url_linkedin)
