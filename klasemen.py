@@ -205,4 +205,4 @@ streamlit.markdown("*Sekretariat Bola Voli Porkal Ambarketawang 2025*")
 
 # Copyright
 url = "https://www.linkedin.com/in/dnnurman/"
-streamlit.markdown("*Made using Python and Streamlit Framework by [Danis Nurmansyah](%s)" % url*")
+streamlit.markdown("*Made using Python and Streamlit Framework by [Danis Nurmansyah](%s)*" % url)
