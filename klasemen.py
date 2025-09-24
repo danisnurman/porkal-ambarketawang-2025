@@ -206,7 +206,7 @@ streamlit.write("\n\n")
 # Tampilkan klasemen B
 streamlit.subheader(":blue-background[**Klasemen Grup B**]")
 streamlit.dataframe(show_klasemenB(), use_container_width=False)
-streamlit.badge("Last update: 24 September 2025 00:28:51", icon=":material/check:", color="green")
+streamlit.badge("Last update: 25 September 2025 00:28:51", icon=":material/check:", color="green")
 # ---
 streamlit.divider()
 streamlit.write("\n\n")
