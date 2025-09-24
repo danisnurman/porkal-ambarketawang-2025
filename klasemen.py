@@ -191,6 +191,8 @@ update_klasemen_B("Mancasan B", "Mejing Wetan B", 109, 108, 2, 3)     #3.1_22-09
 update_klasemen_B("Tlogo", "Watulangkah", 64, 77, 0, 3)               #3.2_22-09-2025
 update_klasemen_A("Mancasan A", "Kalimanjung", 75, 49, 3, 0)          #4.1_23-09-2025
 update_klasemen_A("Mejing Kidul", "Mejing Wetan A", 75, 45, 3, 0)       #4.2_23-09-2025
+update_klasemen_B("Watulangkah", "Mejing Wetan B", 112, 99, 3, 2)      #5.1_24-09-2025
+update_klasemen_B("Tlogo", "Mejing Lor", 75, 63, 3, 0)               #5.2_24-09-2025
 
 # ---
 # Urutan untuk klasemen: berdasarkan Menang, Set Menang, dan Selisih Skor
