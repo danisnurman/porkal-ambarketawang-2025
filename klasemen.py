@@ -201,7 +201,7 @@ update_klasemen_A("Mancasan A", "Mejing Wetan A", 75, 37, 3, 0)       #6.2_25-09
 # Tampilkan klasemen A
 streamlit.subheader(":red-background[**Klasemen Grup A**]")
 streamlit.dataframe(show_klasemenA(), use_container_width=False)
-streamlit.badge("Last update: 23 September 2025 23:16:42", icon=":material/check:", color="green")
+streamlit.badge("Last update: 26 September 2025 00:09:27", icon=":material/check:", color="green")
 # new line
 streamlit.divider()
 streamlit.write("\n\n")
