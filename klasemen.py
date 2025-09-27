@@ -195,15 +195,18 @@ update_klasemen_B("Watulangkah", "Mejing Wetan B", 112, 99, 3, 2)     #5.1_24-09
 update_klasemen_B("Tlogo", "Mejing Lor", 75, 64, 3, 0)                #5.2_24-09-2025
 update_klasemen_A("Kalimanjung", "Gamping Kidul", 80, 102, 1, 3)      #6.1_25-09-2025
 update_klasemen_A("Mancasan A", "Mejing Wetan A", 75, 37, 3, 0)       #6.2_25-09-2025
-update_klasemen_B("Tlogo", "Mejing Wetan B", 75, 68, 3, 0)            #5.1_24-09-2025
-update_klasemen_B("Mejing Lor", "Mancasan B", 58, 75, 0, 3)           #5.2_24-09-2025
+update_klasemen_B("Tlogo", "Mejing Wetan B", 75, 68, 3, 0)            #7.1_26-09-2025
+update_klasemen_B("Mejing Lor", "Mancasan B", 58, 75, 0, 3)           #7.2_26-09-2025
+
+update_klasemen_A("Mancasan A", "Gamping Kidul", 75, 55, 3, 0)      #8.1_27-09-2025
+update_klasemen_A("Kalimanjung", "Mejing Kidul", 0, 75, 0, 3)       #8.2_27-09-2025
 
 # ---
 # Urutan untuk klasemen: berdasarkan Menang, Set Menang, dan Selisih Skor
 # Tampilkan klasemen A
 streamlit.subheader(":red-background[**Klasemen Grup A**]")
 streamlit.dataframe(show_klasemenA(), use_container_width=False)
-streamlit.badge("Last update: 26 September 2025 00:09:27", icon=":material/check:", color="green")
+streamlit.badge("Last update: 27 September 2025 23:01:48", icon=":material/check:", color="green")
 # new line
 streamlit.divider()
 streamlit.write("\n\n")
