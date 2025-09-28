@@ -199,7 +199,7 @@ update_klasemen_B("Tlogo", "Mejing Wetan B", 75, 68, 3, 0)            #7.1_26-09
 update_klasemen_B("Mejing Lor", "Mancasan B", 58, 75, 0, 3)           #7.2_26-09-2025
 update_klasemen_A("Mancasan A", "Gamping Kidul", 75, 55, 3, 0)        #8.1_27-09-2025
 update_klasemen_A("Kalimanjung", "Mejing Kidul", 0, 75, 0, 3)         #8.2_27-09-2025
-update_klasemen_B("Watulangkah", "Mejing Lor", 75, 65, 3, 0)          #9.1_28-09-2025
+update_klasemen_B("Watulangkah", "Mejing Lor", 77, 65, 3, 0)          #9.1_28-09-2025
 update_klasemen_B("Tlogo", "Mancasan B", 98, 80, 3, 1)                #9.2_28-09-2025
 
 # ---
