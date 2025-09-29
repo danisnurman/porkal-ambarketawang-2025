@@ -117,6 +117,15 @@ def update_klasemen_B(timA, timB, skorA, skorB, setA, setB):
             klasemenB.loc[klasemenB["Tim"] == timB, "Poin"] += 2
             klasemenB.loc[klasemenB["Tim"] == timA, "Poin"] += 1
 # ---
+# Fungsi highlight untuk juara grup
+def highlight_top2(row):
+    if row.name == 1:  # baris dengan index 1 = Juara 1
+        return ['background-color: lightgreen'] * len(row)
+    elif row.name == 2:  # baris dengan index 2 = Juara 2
+        return ['background-color: khaki'] * len(row)
+    else:
+        return [''] * len(row)
+
 # Print Klasemen
 def show_klasemenA():
     global klasemenA
@@ -145,6 +154,7 @@ def show_klasemenA():
         # Gradient oranye utk Selisih Skor
         .background_gradient(cmap="Oranges", subset=["Selisih Skor"])
         .format({"Selisih Set": "{:+d}", "Selisih Skor": "{:+d}"})
+        .apply(highlight_top2, axis=1)
     )
 
     return styled
