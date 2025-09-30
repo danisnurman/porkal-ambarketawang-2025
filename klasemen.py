@@ -14,7 +14,7 @@ teamsA = ["Mancasan A", "Gamping Kidul", "Mejing Wetan A", "Kalimanjung", "Mejin
 teamsB = ["Mancasan B", "Tlogo", "Mejing Wetan B", "Mejing Lor", "Watulangkah"]
 # ---
 # Inisialisasi klasemen
-klasemenA = pd.DataFrame({
+klasemen_A = pd.DataFrame({
     "Tim": teamsA,
     "P": 0,
     "W": 0,
@@ -25,7 +25,7 @@ klasemenA = pd.DataFrame({
     "Set -": 0,
     "Poin": 0
 })
-klasemenB = pd.DataFrame({
+klasemen_B = pd.DataFrame({
     "Tim": teamsB,
     "P": 0,
     "W": 0,
@@ -42,80 +42,80 @@ def update_klasemen_A(timA, timB, skorA, skorB, setA, setB):
     global klasemen
 
     # Update jumlah main
-    klasemenA.loc[klasemenA["Tim"] == timA, "P"] += 1
-    klasemenA.loc[klasemenA["Tim"] == timB, "P"] += 1
+    klasemen_A.loc[klasemen_A["Tim"] == timA, "P"] += 1
+    klasemen_A.loc[klasemen_A["Tim"] == timB, "P"] += 1
 
     # Update skor
-    klasemenA.loc[klasemenA["Tim"] == timA, "Skor +"] += skorA
-    klasemenA.loc[klasemenA["Tim"] == timA, "Skor -"] += skorB
-    klasemenA.loc[klasemenA["Tim"] == timB, "Skor +"] += skorB
-    klasemenA.loc[klasemenA["Tim"] == timB, "Skor -"] += skorA
+    klasemen_A.loc[klasemen_A["Tim"] == timA, "Skor +"] += skorA
+    klasemen_A.loc[klasemen_A["Tim"] == timA, "Skor -"] += skorB
+    klasemen_A.loc[klasemen_A["Tim"] == timB, "Skor +"] += skorB
+    klasemen_A.loc[klasemen_A["Tim"] == timB, "Skor -"] += skorA
 
     # Update set
-    klasemenA.loc[klasemenA["Tim"] == timA, "Set +"] += setA
-    klasemenA.loc[klasemenA["Tim"] == timA, "Set -"] += setB
-    klasemenA.loc[klasemenA["Tim"] == timB, "Set +"] += setB
-    klasemenA.loc[klasemenA["Tim"] == timB, "Set -"] += setA
+    klasemen_A.loc[klasemen_A["Tim"] == timA, "Set +"] += setA
+    klasemen_A.loc[klasemen_A["Tim"] == timA, "Set -"] += setB
+    klasemen_A.loc[klasemen_A["Tim"] == timB, "Set +"] += setB
+    klasemen_A.loc[klasemen_A["Tim"] == timB, "Set -"] += setA
 
     # Tentukan menang/kalah
     if setA > setB:
-        klasemenA.loc[klasemenA["Tim"] == timA, "W"] += 1
-        klasemenA.loc[klasemenA["Tim"] == timB, "L"] += 1
+        klasemen_A.loc[klasemen_A["Tim"] == timA, "W"] += 1
+        klasemen_A.loc[klasemen_A["Tim"] == timB, "L"] += 1
         # Poin
         if setA == 3 and setB <= 1:
-            klasemenA.loc[klasemenA["Tim"] == timA, "Poin"] += 3
+            klasemen_A.loc[klasemen_A["Tim"] == timA, "Poin"] += 3
         elif setA == 3 and setB == 2:
-            klasemenA.loc[klasemenA["Tim"] == timA, "Poin"] += 2
-            klasemenA.loc[klasemenA["Tim"] == timB, "Poin"] += 1
+            klasemen_A.loc[klasemen_A["Tim"] == timA, "Poin"] += 2
+            klasemen_A.loc[klasemen_A["Tim"] == timB, "Poin"] += 1
     else:
-        klasemenA.loc[klasemenA["Tim"] == timB, "W"] += 1
-        klasemenA.loc[klasemenA["Tim"] == timA, "L"] += 1
+        klasemen_A.loc[klasemen_A["Tim"] == timB, "W"] += 1
+        klasemen_A.loc[klasemen_A["Tim"] == timA, "L"] += 1
         # Poin
         if setB == 3 and setA <= 1:
-            klasemenA.loc[klasemenA["Tim"] == timB, "Poin"] += 3
+            klasemen_A.loc[klasemen_A["Tim"] == timB, "Poin"] += 3
         elif setB == 3 and setA == 2:
-            klasemenA.loc[klasemenA["Tim"] == timB, "Poin"] += 2
-            klasemenA.loc[klasemenA["Tim"] == timA, "Poin"] += 1
+            klasemen_A.loc[klasemen_A["Tim"] == timB, "Poin"] += 2
+            klasemen_A.loc[klasemen_A["Tim"] == timA, "Poin"] += 1
 
 # Klasemen Grup B
 def update_klasemen_B(timA, timB, skorA, skorB, setA, setB):
-    global klasemenB
+    global klasemen_B
 
     # Update jumlah main
-    klasemenB.loc[klasemenB["Tim"] == timA, "P"] += 1
-    klasemenB.loc[klasemenB["Tim"] == timB, "P"] += 1
+    klasemen_B.loc[klasemen_B["Tim"] == timA, "P"] += 1
+    klasemen_B.loc[klasemen_B["Tim"] == timB, "P"] += 1
 
     # Update skor
-    klasemenB.loc[klasemenB["Tim"] == timA, "Skor +"] += skorA
-    klasemenB.loc[klasemenB["Tim"] == timA, "Skor -"] += skorB
-    klasemenB.loc[klasemenB["Tim"] == timB, "Skor +"] += skorB
-    klasemenB.loc[klasemenB["Tim"] == timB, "Skor -"] += skorA
+    klasemen_B.loc[klasemen_B["Tim"] == timA, "Skor +"] += skorA
+    klasemen_B.loc[klasemen_B["Tim"] == timA, "Skor -"] += skorB
+    klasemen_B.loc[klasemen_B["Tim"] == timB, "Skor +"] += skorB
+    klasemen_B.loc[klasemen_B["Tim"] == timB, "Skor -"] += skorA
 
     # Update set
-    klasemenB.loc[klasemenB["Tim"] == timA, "Set +"] += setA
-    klasemenB.loc[klasemenB["Tim"] == timA, "Set -"] += setB
-    klasemenB.loc[klasemenB["Tim"] == timB, "Set +"] += setB
-    klasemenB.loc[klasemenB["Tim"] == timB, "Set -"] += setA
+    klasemen_B.loc[klasemen_B["Tim"] == timA, "Set +"] += setA
+    klasemen_B.loc[klasemen_B["Tim"] == timA, "Set -"] += setB
+    klasemen_B.loc[klasemen_B["Tim"] == timB, "Set +"] += setB
+    klasemen_B.loc[klasemen_B["Tim"] == timB, "Set -"] += setA
 
     # Tentukan menang/kalah
     if setA > setB:
-        klasemenB.loc[klasemenB["Tim"] == timA, "W"] += 1
-        klasemenB.loc[klasemenB["Tim"] == timB, "L"] += 1
+        klasemen_B.loc[klasemen_B["Tim"] == timA, "W"] += 1
+        klasemen_B.loc[klasemen_B["Tim"] == timB, "L"] += 1
         # Poin
         if setA == 3 and setB <= 1:
-            klasemenB.loc[klasemenB["Tim"] == timA, "Poin"] += 3
+            klasemen_B.loc[klasemen_B["Tim"] == timA, "Poin"] += 3
         elif setA == 3 and setB == 2:
-            klasemenB.loc[klasemenB["Tim"] == timA, "Poin"] += 2
-            klasemenB.loc[klasemenB["Tim"] == timB, "Poin"] += 1
+            klasemen_B.loc[klasemen_B["Tim"] == timA, "Poin"] += 2
+            klasemen_B.loc[klasemen_B["Tim"] == timB, "Poin"] += 1
     else:
-        klasemenB.loc[klasemenB["Tim"] == timB, "W"] += 1
-        klasemenB.loc[klasemenB["Tim"] == timA, "L"] += 1
+        klasemen_B.loc[klasemen_B["Tim"] == timB, "W"] += 1
+        klasemen_B.loc[klasemen_B["Tim"] == timA, "L"] += 1
         # Poin
         if setB == 3 and setA <= 1:
-            klasemenB.loc[klasemenB["Tim"] == timB, "Poin"] += 3
+            klasemen_B.loc[klasemen_B["Tim"] == timB, "Poin"] += 3
         elif setB == 3 and setA == 2:
-            klasemenB.loc[klasemenB["Tim"] == timB, "Poin"] += 2
-            klasemenB.loc[klasemenB["Tim"] == timA, "Poin"] += 1
+            klasemen_B.loc[klasemen_B["Tim"] == timB, "Poin"] += 2
+            klasemen_B.loc[klasemen_B["Tim"] == timA, "Poin"] += 1
 # ---
 # Fungsi highlight untuk juara grup
 def highlight_top2(row):
@@ -126,21 +126,20 @@ def highlight_top2(row):
 
 # Print Klasemen
 def show_klasemen_A():
-    global klasemenA
+    global klasemen_A
 
     # Hitung selisih
-    klasemenA["Selisih Set"] = klasemenA["Set +"] - klasemenA["Set -"]
-    klasemenA["Selisih Skor"] = klasemenA["Skor +"] - klasemenA["Skor -"]
+    klasemen_A["Selisih Set"] = klasemen_A["Set +"] - klasemen_A["Set -"]
+    klasemen_A["Selisih Skor"] = klasemen_A["Skor +"] - klasemen_A["Skor -"]
 
     # Urutkan
-    df_sorted = klasemenA.sort_values(
+    df_sorted = klasemen_A.sort_values(
         by=["Poin", "Selisih Set", "Selisih Skor"],
         ascending=[False, False, False]
     ).reset_index(drop=True)
 
     # Tambahkan nomor urut
     df_sorted.index = df_sorted.index + 1
-    NomorKlasemen = df_sorted.index
     df_sorted.rename_axis("No", inplace=True)
 
     # ---------- STYLING ----------
@@ -159,21 +158,20 @@ def show_klasemen_A():
     return styled
     
 def show_klasemen_B():
-    global klasemenB
+    global klasemen_B
 
     # Hitung selisih
-    klasemenB["Selisih Set"] = klasemenB["Set +"] - klasemenB["Set -"]
-    klasemenB["Selisih Skor"] = klasemenB["Skor +"] - klasemenB["Skor -"]
+    klasemen_B["Selisih Set"] = klasemen_B["Set +"] - klasemen_B["Set -"]
+    klasemen_B["Selisih Skor"] = klasemen_B["Skor +"] - klasemen_B["Skor -"]
 
     # Urutkan
-    df_sorted = klasemenB.sort_values(
+    df_sorted = klasemen_B.sort_values(
         by=["Poin", "Selisih Set", "Selisih Skor"],
         ascending=[False, False, False]
     ).reset_index(drop=True)
 
     # Tambahkan nomor urut
     df_sorted.index = df_sorted.index + 1
-    NomorKlasemen = df_sorted.index
     df_sorted.rename_axis("No", inplace=True)
 
     # ---------- STYLING ----------
