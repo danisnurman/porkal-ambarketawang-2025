@@ -152,7 +152,7 @@ def show_klasemenA():
         # Gradient oranye utk Selisih Skor
         .background_gradient(cmap="Oranges", subset=["Selisih Skor"])
         .format({"Selisih Set": "{:+d}", "Selisih Skor": "{:+d}"})
-        .apply(highlight_top2, subset=["Tim", "P", "W", "L"], axis=1)
+        .apply(highlight_top2, subset=[df_sorted.index, "Tim", "P", "W", "L"], axis=1)
     )
 
     return styled
@@ -184,7 +184,7 @@ def show_klasemenB():
         # Gradient oranye utk Selisih Skor
         .background_gradient(cmap="Oranges", subset=["Selisih Skor"])
         .format({"Selisih Set": "{:+d}", "Selisih Skor": "{:+d}"})
-        .apply(highlight_top2, subset=["Tim", "P", "W", "L"], axis=1)
+        .apply(highlight_top2, subset=[df_sorted.index, "Tim", "P", "W", "L"], axis=1)
     )
 
     return styled
@@ -210,7 +210,7 @@ update_klasemen_A("Mancasan A", "Gamping Kidul", 75, 55, 3, 0)        #8.1_27-09
 update_klasemen_A("Kalimanjung", "Mejing Kidul", 0, 75, 0, 3)         #8.2_27-09-2025
 update_klasemen_B("Watulangkah", "Mejing Lor", 77, 65, 3, 0)          #9.1_28-09-2025
 update_klasemen_B("Tlogo", "Mancasan B", 98, 80, 3, 1)                #9.2_28-09-2025
-update_klasemen_A("Mejing Wetan A", "Gamping Kidul", 0, 75, 0, 3)        #10.1_29-09-2025
+update_klasemen_A("Mejing Wetan A", "Gamping Kidul", 0, 75, 0, 3)     #10.1_29-09-2025
 update_klasemen_A("Mancasan A", "Mejing Kidul", 95, 94, 1, 3)         #10.2_29-09-2025
 
 # ---
