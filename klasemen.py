@@ -152,7 +152,7 @@ def show_klasemenA():
         # Gradient oranye utk Selisih Skor
         .background_gradient(cmap="Oranges", subset=["Selisih Skor"])
         .format({"Selisih Set": "{:+d}", "Selisih Skor": "{:+d}"})
-        .apply(highlight_top2, subset=[df_sorted.index, "Tim", "P", "W", "L"], axis=1)
+        .apply(highlight_top2, subset=[index, "Tim", "P", "W", "L"], axis=1)
     )
 
     return styled
@@ -184,7 +184,7 @@ def show_klasemenB():
         # Gradient oranye utk Selisih Skor
         .background_gradient(cmap="Oranges", subset=["Selisih Skor"])
         .format({"Selisih Set": "{:+d}", "Selisih Skor": "{:+d}"})
-        .apply(highlight_top2, subset=[df_sorted.index, "Tim", "P", "W", "L"], axis=1)
+        .apply(highlight_top2, subset=[index, "Tim", "P", "W", "L"], axis=1)
     )
 
     return styled
