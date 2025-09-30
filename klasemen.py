@@ -15,7 +15,6 @@ teamsB = ["Mancasan B", "Tlogo", "Mejing Wetan B", "Mejing Lor", "Watulangkah"]
 # ---
 # Inisialisasi klasemen
 klasemenA = pd.DataFrame({
-    "NomorKlasemen": 0,
     "Tim": teamsA,
     "P": 0,
     "W": 0,
@@ -27,7 +26,6 @@ klasemenA = pd.DataFrame({
     "Poin": 0
 })
 klasemenB = pd.DataFrame({
-    "NomorKlasemen": 0,
     "Tim": teamsB,
     "P": 0,
     "W": 0,
@@ -127,7 +125,7 @@ def highlight_top2(row):
         return [''] * len(row)
 
 # Print Klasemen
-def show_klasemenA():
+def show_klasemen_A():
     global klasemenA
 
     # Hitung selisih
@@ -155,12 +153,12 @@ def show_klasemenA():
         # Gradient oranye utk Selisih Skor
         .background_gradient(cmap="Oranges", subset=["Selisih Skor"])
         .format({"Selisih Set": "{:+d}", "Selisih Skor": "{:+d}"})
-        .apply(highlight_top2, subset=["NomorKlasemen", "Tim", "P", "W", "L"], axis=1)
+        .apply(highlight_top2, subset=["Tim", "P", "W", "L"], axis=1)
     )
 
     return styled
     
-def show_klasemenB():
+def show_klasemen_B():
     global klasemenB
 
     # Hitung selisih
@@ -188,7 +186,7 @@ def show_klasemenB():
         # Gradient oranye utk Selisih Skor
         .background_gradient(cmap="Oranges", subset=["Selisih Skor"])
         .format({"Selisih Set": "{:+d}", "Selisih Skor": "{:+d}"})
-        .apply(highlight_top2, subset=["NomorKlasemen", "Tim", "P", "W", "L"], axis=1)
+        .apply(highlight_top2, subset=["Tim", "P", "W", "L"], axis=1)
     )
 
     return styled
@@ -221,14 +219,14 @@ update_klasemen_A("Mancasan A", "Mejing Kidul", 95, 94, 1, 3)         #10.2_29-0
 # Urutan untuk klasemen: berdasarkan Menang, Set Menang, dan Selisih Skor
 # Tampilkan klasemen A
 streamlit.subheader(":red-background[**Klasemen Grup A**]")
-streamlit.dataframe(show_klasemenA(), use_container_width=False)
+streamlit.dataframe(show_klasemen_A(), use_container_width=False)
 streamlit.badge("Last update: 29 September 2025 23:33:46", icon=":material/check:", color="green")
 # new line
 streamlit.divider()
 streamlit.write("\n\n")
 # Tampilkan klasemen B
 streamlit.subheader(":blue-background[**Klasemen Grup B**]")
-streamlit.dataframe(show_klasemenB(), use_container_width=False)
+streamlit.dataframe(show_klasemen_B(), use_container_width=False)
 streamlit.badge("Last update: 29 September 2025 01:02:21", icon=":material/check:", color="green")
 # ---
 streamlit.divider()
