@@ -15,7 +15,7 @@ teamsB = ["Mancasan B", "Tlogo", "Mejing Wetan B", "Mejing Lor", "Watulangkah"]
 # ---
 # Inisialisasi klasemen
 klasemenA = pd.DataFrame({
-    "NomorKlasemen": 0;
+    "NomorKlasemen": 0,
     "Tim": teamsA,
     "P": 0,
     "W": 0,
@@ -27,7 +27,7 @@ klasemenA = pd.DataFrame({
     "Poin": 0
 })
 klasemenB = pd.DataFrame({
-    "NomorKlasemen": 0;
+    "NomorKlasemen": 0,
     "Tim": teamsB,
     "P": 0,
     "W": 0,
